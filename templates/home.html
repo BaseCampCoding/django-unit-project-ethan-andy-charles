@@ -5,7 +5,7 @@
 {% block content %}
     {% for object in object_list %}
         <div class="post-entry">
-            <h2><a href="">{{ object.title }}</a></h2>
+            <h2><a href="{% url 'transmission_detail' object.pk %}">{{ object.title }}</a></h2>
             <p>{{ object.body }}</p>
         </div>
     {% endfor %}
