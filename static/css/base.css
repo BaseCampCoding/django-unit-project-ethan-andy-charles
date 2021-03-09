@@ -1,6 +1,10 @@
-body {
-    background-color: coral;
+main {
+    background-color: #1C2222;
+    
 }
-header h1 a{
-    color: red;
+h1 {
+    color: white;
+}
+nav{
+    background-color:rgb(6, 6, 7);
 }

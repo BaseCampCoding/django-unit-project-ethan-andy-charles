@@ -1,10 +1,10 @@
-from channels.generic.websocket import AsyncJsonWebSocketConsumer
+from channels.generic.websocket import AsyncJsonWebsocketConsumer
 import json
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
-class PublicChatConsumer(AsyncJsonWebSocketConsumer):
+class PublicChatConsumer(AsyncJsonWebsocketConsumer):
 
     async def connect(self):
         """
