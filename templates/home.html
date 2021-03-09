@@ -3,11 +3,18 @@
 {% block title %}Live Chat{% endblock title%}
 
 {% block content %}
-{% if user.is_authenticated %}
-    Hi {{ user.username }}
-    <p><a href="{% url 'logout' %}">Log Out</a></p>
-{% else %}
-    <p> Please Login </p>
-    <a href="{% url 'login' %}">Login In</a> | <a href="{% url 'signup' %}">Sign Up</a>
-{% endif %}
+    {% for object in object_list %}
+        <div class="post-entry">
+            <h2><a href="">{{ object.title }}</a></h2>
+            <p>{{ object.body }}</p>
+        </div>
+    {% endfor %}
+    {% if user.is_authenticated %}
+        Hi {{ user.username }}
+        <p><a href="{% url 'logout' %}">Log Out</a></p>
+    {% else %}
+        <p> Please Login </p>
+        <a href="{% url 'login' %}">Log In</a> | <a href="{% url 'signup' %}">Sign Up</a>
+    {% endif %}
+
 {% endblock content %}
