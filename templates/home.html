@@ -3,6 +3,46 @@
 {% block title %}Live Chat{% endblock title%}
 
 {% block content %}
+<style type="text/css">
+    .chat-log {
+        height: 500px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 10px;
+        background-color: #fff;
+        font-size: 0.9em;
+        flex-direction: column-reverse;
+    }
+    </style>
+    
+    <div class="container">
+        <div class="d-flex flex-column">
+            <div class="d-flex chat-log">
+                
+            </div>
+            <div class="d-flex chat-message-input-container">
+                <textarea class="flex-grow-1 chat-message-input" id="id_chat_message_input"></textarea>
+                <button class="btn btn-primary chat-message-submit-button">
+                    <span id="id_chat_message_submit" class="material-icons">send
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+<script type="text/javascript">
+
+
+</script>
+{% if user.is_authenticated %}
+    Hi {{ user.username }}
+    <p><a href="{% url 'logout' %}">Log Out</a></p>
+{% else %}
+    <p> Please Login </p>
+    <a href="{% url 'login' %}">Login In</a> | <a href="{% url 'signup' %}">Sign Up</a>
+
+    <p> Please Login </p> 
+{% endif %}
     {% for object in object_list %}
         <div class="post-entry">
             <h2><a href="{% url 'transmission_detail' object.pk %}">{{ object.title }}</a></h2>
