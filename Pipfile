@@ -5,6 +5,9 @@ name = "pypi"
 
 [packages]
 django = "*"
+channels = "*"
+django-crispy-forms = "==1.9.2"
+whitenoise = "==5.1.0"
 
 [dev-packages]
 
