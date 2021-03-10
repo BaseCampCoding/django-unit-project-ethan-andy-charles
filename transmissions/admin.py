@@ -1,5 +1,14 @@
 from django.contrib import admin
-from .models import Transmission
+from .models import Transmission, Comment
 
+class CommentInLine(admin.TabularInline):
+    model = Comment
+    extra = 0
 
-admin.site.register(Transmission)
+class TransmissionAdmin(admin.ModelAdmin):
+    inlines = [
+        CommentInLine,
+    ]
+
+admin.site.register(Transmission, TransmissionAdmin)
+admin.site.register(Comment)
