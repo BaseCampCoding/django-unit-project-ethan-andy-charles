@@ -21,6 +21,9 @@
                 {% if user.is_authenticated %}
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
+                            <a class="nav-link" href="{% url 'transmission_new' %}">New Transmission</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link dropdown-toggle" href="#"
                                 id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
@@ -49,6 +52,5 @@
                 {% endblock content %}
             </div>
         </main>
-        
     </body>
 </html>
