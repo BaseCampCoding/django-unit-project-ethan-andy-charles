@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
 
 class Transmission(models.Model):
@@ -9,3 +10,23 @@ class Transmission(models.Model):
 
     def __str__(self):
         return self.title
+
+class Comment(models.Model):
+    transmission = models.ForeignKey(
+        Transmission, 
+        on_delete=models.CASCADE,
+        related_name='comments',
+        )
+    comment = models.CharField(max_length=140)
+    authhor = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.CASCADE,
+    )
+
+    def __str__(self):
+        return self.comment
+
+    def get_absolute_url(self):
+        return reverse('transmission_detail')
+
+    
