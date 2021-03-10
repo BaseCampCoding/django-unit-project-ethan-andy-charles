@@ -9,7 +9,7 @@
     <p><a href="{% url 'logout' %}">Log Out</a></p>
 {% else %}
     <p> Please Login </p>
-    <a href="{% url 'login' %}">Login In</a> | <a href="{% url 'signup' %}">Sign Up</a>
+    <a href="{% url 'login' %}">Log In</a> | <a href="{% url 'signup' %}">Sign Up</a>
 
     <p> Please Login </p> 
 {% endif %}
@@ -19,12 +19,6 @@
             <p>{{ object.body }}</p>
         </div>
     {% endfor %}
-    {% if user.is_authenticated %}
-        Hi {{ user.username }}
-        <p><a href="{% url 'logout' %}">Log Out</a></p>
-    {% else %}
-        <p> Please Login </p>
-        <a href="{% url 'login' %}">Log In</a> | <a href="{% url 'signup' %}">Sign Up</a>
-    {% endif %}
+    
 
 {% endblock content %}
