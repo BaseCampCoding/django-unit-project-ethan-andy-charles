@@ -1,10 +1,11 @@
-
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8"/>
     <title>Chat Room</title>
 </head>
+{% block content %}
 <body>
     <textarea class="border border-primary border-1" id="chat-log" cols="100" rows="20"></textarea><br>
     <input id="chat-message-input" type="text" size="100"><br>
@@ -47,4 +48,5 @@
         };
     </script>
 </body>
+{% endblock content %}
 </html>

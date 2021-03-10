@@ -5,4 +5,14 @@
         <h2>{{ object.title }}</h2>
         <p>{{ object.body }}</p>
     </div>
+    <div class="card-footer">
+        {% for comment in transmission.comments.all %}
+        <p>
+            <span class="font-weight-bold">
+                {{ comment.author }}
+            </span>
+            {{ comment }}
+        </p>
+        {% endfor %}
+    </div>
 {% endblock content %}
