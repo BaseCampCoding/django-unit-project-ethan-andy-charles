@@ -26,6 +26,14 @@
 </div>
     </div>
     <script>
+        function createRandomColor() {
+            const hexParts = '0123456789ABCDEF';
+            let color = '#'
+            for (let i = 0; i < 6; i++) {
+                color += hexParts[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
         const roomName = JSON.parse(document.getElementById('room-name').textContent);
 
         const chatSocket = new WebSocket(
@@ -38,7 +46,7 @@
 
         chatSocket.onmessage = function(e) {
             const data = JSON.parse(e.data);
-            document.querySelector('#chat-log').value += (data.message + '\n');
+            document.querySelector('#chat-log').value += ( data.user + ': ' + data.message + '\n');
         };
 
         chatSocket.onclose = function(e) {
