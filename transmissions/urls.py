@@ -1,21 +1,7 @@
 from django.urls import path
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
 from .views import TransmissionListView, TransmissionDetailView, TransmissionCreateView
-=======
-from .views import TransmissionListView, TransmissionDetailView, CommentCreateView
->>>>>>> Stashed changes
-=======
-from .views import TransmissionListView, TransmissionDetailView, CommentCreateView
->>>>>>> Stashed changes
-=======
-from .views import TransmissionListView, TransmissionDetailView, CommentCreateView
->>>>>>> Stashed changes
-=======
-from .views import TransmissionListView, TransmissionDetailView, CommentCreateView
->>>>>>> Stashed changes
+
 
 
 urlpatterns = [
