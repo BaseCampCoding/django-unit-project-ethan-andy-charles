@@ -1,5 +1,7 @@
 from django.urls import path
-from .views import TransmissionListView, TransmissionDetailView, TransmissionCreateView, TransmissionUpdateView, TransmissionDeleteView, CommentCreateView
+
+from .views import CommentCreateView
+from .views import TransmissionListView, TransmissionDetailView, TransmissionCreateView, TransmissionUpdateView, TransmissionDeleteView
 
 
 
