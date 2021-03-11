@@ -5,6 +5,9 @@
         <h2>{{ object.title }}</h2>
         <p>{{ object.body }}</p>
     </div>
+    {% if user.is_authenticated %}
+        <a href="{% url 'transmission_edit' object.pk %}">Edit</a> | <a href="{% url 'transmission_delete' object.pk %}">Delete</a></a>
+    {% endif %}
     <div class="card-footer">
         {% for comment in transmission.comments.all %}
         <p>
@@ -15,9 +18,5 @@
         </p>
         {% endfor %}
     </div>
-    <div class="card-footer text-center text-muted">
-    <p><a href="{% url 'comment_edit' comment.pk %}">Edit</a> |
-    <a href="{% url 'comment_delete' comment.pk %}">Delete</a></p>
-    <p>Back to<a href="{% url 'transmission_detail' %}">All Transmissions</a></p>
-    </div>
+    
 {% endblock content %}
