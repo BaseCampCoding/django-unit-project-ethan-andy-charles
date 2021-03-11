@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Transmission, Comment
 from django.shortcuts import render
 from django.conf import settings
@@ -44,6 +44,15 @@ class TransmissionDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView
 
 class CommentCreateView(LoginRequiredMixin, CreateView):
     model = Comment
-    template_name = 'transmission_new.html'
+    template_name = 'comment_new.html'
     fields = ('transmission', 'comment', 'author')
 
+class CommentUpdateView(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
+    model = Comment
+    fields = ('comment')
+    template_name = 'comment_edit'
+
+class CommentDeleteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
+    model = Comment
+    template_name = 'comment_delete'
+    success_url = reverse_lazy('transmission_detail')
