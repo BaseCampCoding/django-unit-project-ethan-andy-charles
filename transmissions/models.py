@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.urls import reverse_lazy
 
 
 class Transmission(models.Model):
@@ -10,6 +11,9 @@ class Transmission(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse_lazy('transmission_detail', args=[str(self.id)])
 
 class Comment(models.Model):
     transmission = models.ForeignKey(
@@ -28,5 +32,7 @@ class Comment(models.Model):
 
     def get_absolute_url(self):
         return reverse('transmission_detail')
+    
+    
 
     
