@@ -15,4 +15,5 @@
         </p>
         {% endfor %}
     </div>
+    <a href="{% url 'transmission_edit' object.pk %}">Edit</a> | <a href="{% url 'transmission_delete' object.pk %}">Delete</a></a>
 {% endblock content %}
