@@ -40,7 +40,7 @@ class TransmissionDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView
     def test_func(self):
         obj = self.get_object()
         return obj.author == self.request.user
-    
+
 
 class CommentCreateView(LoginRequiredMixin, CreateView):
     model = Comment
@@ -49,10 +49,21 @@ class CommentCreateView(LoginRequiredMixin, CreateView):
 
 class CommentUpdateView(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
     model = Comment
-    fields = ('comment')
-    template_name = 'comment_edit'
+    fields = ('comment',)
+    template_name = 'comment_edit.html'
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
+
 
 class CommentDeleteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
     model = Comment
-    template_name = 'comment_delete'
-    success_url = reverse_lazy('transmission_detail')
+    template_name = 'comment_delete.html'
+    success_url = reverse_lazy('home')
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
+
