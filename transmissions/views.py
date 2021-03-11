@@ -15,11 +15,14 @@ class TransmissionDetailView(DetailView):
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 class TransmissionCreateView(CreateView):
     model = Transmission
     template_name = 'transmission_new.html'
     fields = ['title', 'author', 'body']
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 class CommentCreateView(CreateView):
@@ -28,6 +31,9 @@ class CommentCreateView(CreateView):
     fields = ('transmission', 'comment', 'author')
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
