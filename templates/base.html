@@ -24,12 +24,16 @@
                             <a class="nav-link" href="{% url 'transmission_new' %}">New Transmission</a>
                         </li>
                         <li class="nav-item">
+=======
+                            <a href="{% url 'transmission_new' %}">+ New Comment</a>
                             <a class="nav-link dropdown-toggle" href="#"
                                 id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                                 {{ user.username }}
                             </a>
                             <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{% url 'index' %}">ChatRooms</a>
+                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{% url 'password_change' %}">Change password</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{% url 'logout' %}">Log Out</a>

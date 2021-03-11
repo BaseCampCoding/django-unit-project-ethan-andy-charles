@@ -31,8 +31,6 @@ class Comment(models.Model):
         return self.comment
 
     def get_absolute_url(self):
-        return reverse('transmission_detail')
-    
-    
+        return reverse_lazy('transmission_detail', args=[str(self.id)])
 
     
