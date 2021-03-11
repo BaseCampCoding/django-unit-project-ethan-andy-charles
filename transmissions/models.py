@@ -1,13 +1,17 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy
-
+from accounts.models import CustomUser
 
 class Transmission(models.Model):
     title = models.CharField(max_length=200, default=200,)
     author = models.ForeignKey('accounts.CustomUser', on_delete=models.CASCADE, default="Joe")
     body = models.TextField()
+    likes = models.ManyToManyField(CustomUser, related_name='transmission_like')
 
+
+    def total_likes(self):
+        return self.likes.count()
 
     def __str__(self):
         return self.title
