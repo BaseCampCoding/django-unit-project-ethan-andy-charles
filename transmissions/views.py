@@ -1,11 +1,20 @@
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Transmission, Comment
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.conf import settings
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views.generic.edit import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.http import HttpResponseRedirect
+
+def LikeView(request, pk):
+    transmission = get_object_or_404(Transmission, id=request.POST.get('transmission_id'))
+    transmission.likes.add(request.user)
+    return HttpResponseRedirect(reverse('transmission_detail', args=[str(pk)]))
+    
+
+
 
 class TransmissionListView(ListView):
     model = Transmission
@@ -14,6 +23,13 @@ class TransmissionListView(ListView):
 class TransmissionDetailView(DetailView): 
     model = Transmission
     template_name = 'transmission_detail.html'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(TransmissionDetailView, self).get_context_data(*args, **kwargs)
+        stuff = get_object_or_404(Transmission, id=self.kwargs['pk'])
+        total_likes = stuff.total_likes()
+        context["total_likes"] = total_likes
+        return context
 
 
 class TransmissionCreateView(LoginRequiredMixin, CreateView):
