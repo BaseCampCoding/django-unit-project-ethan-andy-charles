@@ -1,5 +1,5 @@
 from django.urls import path
-
+from .views import LikeView
 from .views import TransmissionListView, TransmissionDetailView, TransmissionCreateView,TransmissionDeleteView,TransmissionUpdateView, CommentCreateView, CommentDeleteView, CommentUpdateView
 
 
@@ -13,4 +13,5 @@ urlpatterns = [
     path('new/', CommentCreateView.as_view(), name='comment_new'),
     path("<int:pk>/edit/", CommentUpdateView.as_view(), name='comment_edit'),
     path("<int:pk>/delete/", CommentDeleteView.as_view(), name='comment_delete'),
+    path('like/<int:pk>', LikeView, name="like_transmission"), 
 ]
