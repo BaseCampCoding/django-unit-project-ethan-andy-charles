@@ -11,6 +11,16 @@
    <p>Our chat rooms do not save any information and are only open when one person has started one. As soon as everyone leaves a room it is gone and so are the messages. If you are trying to join your friends in a room you need to type in the name of the room exactly.
        <br><small><i>- When creating a chat room do not use spaces in the name.</i></small>
    </p>
+   Copy
+<div class="list-group">
+  <a href="{% url 'index' %}general" class="list-group-item list-group-item-action" aria-current="true">
+    General
+  </a>
+  <a href="{% url 'index' %}gaming" class="list-group-item list-group-item-action">Gaming</a>
+  <a href="{% url 'index' %}art" class="list-group-item list-group-item-action">Art</a>
+  <a href="{% url 'index' %}music" class="list-group-item list-group-item-action">Music</a>
+  <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">More Soon...</a>
+</div>
    <div class="form-floating mb-3">
     <input id="room-name-input" class="form-control" type="text" placeholder="Room Name" size="100">
     </div>
