@@ -5,3 +5,10 @@ h1 {
 nav{
     background-color:rgb(6, 6, 7);
 }
+#card-new {
+    background-color: #dad7c8 !important;
+}
+
+#main {
+    background-color: #4c4b4c;
+}

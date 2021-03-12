@@ -6,7 +6,7 @@
 
 
     {% for object in object_list %}
-        <div class="post-entry card " style="width: 50rem; margin: 0 auto; float: none; margin-bottom: 50px; ">
+        <div id="card-new" class="post-entry card" style="width: 50rem; margin: 0 auto; float: none; margin-bottom: 50px; ">
             <div class="card-title text-center">
                 <h2><a href="{% url 'transmission_detail' object.pk %}">{{ object.title }}</a></h2>
             </div>
