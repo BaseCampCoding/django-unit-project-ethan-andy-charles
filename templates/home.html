@@ -10,7 +10,7 @@
 
 {% endif %}
     {% for object in object_list %}
-        <div class="post-entry card text-center" style="width: 28rem;">
+        <div class="post-entry card text-center" style="width: 50rem; margin: 0 auto; float: none; margin-bottom: 10px; ">
             <div class="card-title">
                 <h2><a href="{% url 'transmission_detail' object.pk %}">{{ object.title }}</a></h2>
             </div>
