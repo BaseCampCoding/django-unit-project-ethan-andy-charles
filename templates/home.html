@@ -4,20 +4,18 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
-    Hi {{ user.username }}
-    <p><a href="{% url 'logout' %}">Log Out</a></p>
 
-{% endif %}
     {% for object in object_list %}
-        <div class="post-entry card text-center" style="width: 50rem; margin: 0 auto; float: none; margin-bottom: 10px; ">
-            <div class="card-title">
+        <div class="post-entry card " style="width: 50rem; margin: 0 auto; float: none; margin-bottom: 50px; ">
+            <div class="card-title text-center">
                 <h2><a href="{% url 'transmission_detail' object.pk %}">{{ object.title }}</a></h2>
             </div>
-            <div class="card-body">
-                <p> {{ object.body }} </p>
-                </br>
-                <p> {{ object.author }} </p>
+            <div class="card-body text-center" style="padding: 0; margin: 0; ">
+                <p> By {{ object.author }} </p>
+                
+            </div>
+            <div class="card-body float-left"
+                 <p> {{ object.body }} </p>
             </div>
         </div>
     {% endfor %}
