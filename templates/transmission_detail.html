@@ -18,14 +18,14 @@
     {% endif %}
     <div class="card-footer">
         {% for comment in transmission.comments.all %}
-        <p>
+        <p style="padding-top: 15px; margin: 0;">
             <span class="font-weight-bold">
                 {{ comment.author }}
             </span>
             {{ comment }}
         </p>
         {% if user.is_authenticated %}
-        <a href="{% url 'comment_edit' comment.pk %}">Edit</a> | <a href="{% url 'comment_delete' comment.pk %}">Delete</a></a>
+        <a href="{% url 'comment_edit' comment.pk %}">Edit</a> | <a href="{% url 'comment_delete' comment.pk %}">Delete</a>
     {% endif %}
         {% endfor %}
     </div>
