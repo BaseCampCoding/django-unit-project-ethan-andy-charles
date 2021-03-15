@@ -1,6 +1,7 @@
 {% load static %}
 <html>
     <head>
+        <link rel="icon" href="https://static.thenounproject.com/png/2206184-200.png">
         <meta charset="utf-8">
         <title>{% block title %}Live Chat{% endblock title %}</title>
        
@@ -15,7 +16,7 @@
     </head>
     <body id="main">
         <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="{% url 'home' %}">Hacket</a>
+            <a class="navbar-brand" href="{% url 'home' %}" style="color: #8e8c82;">Hacket</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -23,10 +24,10 @@
                 {% if user.is_authenticated %}
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'transmission_new' %}">New Transmission</a>
+                            <a class="nav-link" href="{% url 'transmission_new' %}" style="color: #8e8c82;">New Transmission</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link dropdown-toggle" href="#"
+                            <a style="color: #8e8c82;" class="nav-link dropdown-toggle" href="#"
                                 id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                                 {{ user.username }}
@@ -43,8 +44,8 @@
                     </ul>
                 {% else %}
                     <form class="form-inline ml-auto">
-                        <a href="{% url 'login' %}" class="btn btn-outline-secondary">Log In</a>
-                        <a href="{% url 'signup' %}" class="btn btn-primary ml-2">Sign up</a>
+                        <a href="{% url 'login' %}" class="btn btn-outline-secondary" style="color: #8e8c82;">Log In</a>
+                        <a href="{% url 'signup' %}" class="btn btn-primary ml-2" style="color: #8e8c82;">Sign up</a>
                     </form>
                 {% endif %}
         
