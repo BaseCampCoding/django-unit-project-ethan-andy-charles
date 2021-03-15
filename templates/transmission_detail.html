@@ -6,6 +6,9 @@
         <p>{{ object.body }}</p>
     </div>
     {% if user.is_authenticated %}
+    <div>
+    <a href="{% url 'comment_new' %}">New Comment</a>
+    </div>
         <a href="{% url 'transmission_edit' object.pk %}">Edit</a> | <a href="{% url 'transmission_delete' object.pk %}">Delete</a></a>
         <br/>
         <form action="{% url 'like_transmission' transmission.pk %}" method="POST">
