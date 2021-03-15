@@ -11,7 +11,7 @@
         <div>
             <a href="{% url 'comment_new' %}">New Comment</a>
         </div>
-            <a href="{% url 'transmission_edit' object.pk %}">Edit</a> | <a href="{% url 'transmission_delete' object.pk %}">Delete</a></a>
+            <a href="{% url 'transmission_edit' object.pk %}">Edit</a> | <a href="{% url 'transmission_delete' object.pk %}">Delete</a>
             <br/>
             <form action="{% url 'like_transmission' transmission.pk %}" method="POST">
                 {% csrf_token %}
@@ -20,7 +20,7 @@
         {% endif %}
         <div class="card-footer">
             {% for comment in transmission.comments.all %}
-            <p>
+            <p style="padding-top: 15px; margin: 0;">
                 <span class="font-weight-bold">
                     {{ comment.author }}
                 </span>

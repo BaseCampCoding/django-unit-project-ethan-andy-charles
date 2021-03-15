@@ -1,16 +1,14 @@
-
 h1 {
-    color: white;
+  color: white;
 }
-nav{
-    background-color:rgb(6, 6, 7);
+nav {
+  background-color: rgb(6, 6, 7);
 }
 #card-new {
-    background-color: #dad7c8 !important;
+  background-color: #dad7c8 !important;
 }
 
 #main {
-    background-color: #4c4b4c;
-    font-family: 'Syne Mono', sans-serif;
+  background-color: #4c4b4c;
+  font-family: "Syne Mono", sans-serif;
 }
-
