@@ -7,7 +7,29 @@
             <h3 class="card-body text-center">{{ object.author }}</h3>
             <p class="card-body text-left">{{ object.body }}</p>
         </div>
-        <div id="oneline">
+        <a href="{% url 'user_profile' object.author.id %}">Profile Page</a>
+        {% if user.is_authenticated %}
+        <div>
+            <a href="{% url 'comment_new' %}" style="color: #8e8c82;">New Comment</a>
+        </div>
+            <a href="{% url 'transmission_edit' object.pk %}" style="color: #8e8c82;">Edit</a> | <a href="{% url 'transmission_delete' object.pk %}" style="color: #8e8c82;">Delete</a>
+            <br/>
+            <form action="{% url 'like_transmission' transmission.pk %}" method="POST">
+                {% csrf_token %}
+                <button type="submit", name="transmission_id", value="{{ transmission.id }}", class="btn btn-primary btn-sm">Like - {{ total_likes }}</button>
+            </form>
+        {% endif %}
+        <div class="card-footer">
+            {% for comment in transmission.comments.all %}
+            <p style="padding-top: 15px; margin: 0;">
+                <span class="font-weight-bold">
+                    {{ comment.author }}
+                </br>
+                    <a href="{% url 'user_profile' comment.author.id %}">Profile Page</a>
+                </span>
+            </br>
+                {{ comment }}
+            </p>
             {% if user.is_authenticated %}
            
                 <a href="{% url 'comment_new' %}" style="color: #8e8c82;">New Comment</a>
