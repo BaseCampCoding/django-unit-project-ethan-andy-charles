@@ -12,3 +12,7 @@ nav {
   background-color: #4c4b4c;
   font-family: "Syne Mono", sans-serif;
 }
+
+#oneline {
+    flex-direction: row;
+}
