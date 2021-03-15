@@ -9,9 +9,9 @@
         </div>
         {% if user.is_authenticated %}
         <div>
-            <a href="{% url 'comment_new' %}">New Comment</a>
+            <a href="{% url 'comment_new' %}" style="color: #8e8c82;">New Comment</a>
         </div>
-            <a href="{% url 'transmission_edit' object.pk %}">Edit</a> | <a href="{% url 'transmission_delete' object.pk %}">Delete</a>
+            <a href="{% url 'transmission_edit' object.pk %}" style="color: #8e8c82;">Edit</a> | <a href="{% url 'transmission_delete' object.pk %}" style="color: #8e8c82;">Delete</a>
             <br/>
             <form action="{% url 'like_transmission' transmission.pk %}" method="POST">
                 {% csrf_token %}
@@ -27,7 +27,7 @@
                 {{ comment }}
             </p>
             {% if user.is_authenticated %}
-                <a href="{% url 'comment_edit' comment.pk %}">Edit</a> | <a href="{% url 'comment_delete' comment.pk %}">Delete</a></a>
+                <a href="{% url 'comment_edit' comment.pk %}" style="color: #8e8c82;">Edit</a> | <a href="{% url 'comment_delete' comment.pk %}" style="color: #8e8c82;">Delete</a></a>
             {% endif %}
             {% endfor %}
         </div>
