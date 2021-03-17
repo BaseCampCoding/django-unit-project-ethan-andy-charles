@@ -11,6 +11,7 @@ django-debug-toolbar = "*"
 channels = "*"
 channels-redis = "*"
 selenium = "*"
+wheel = "*"
 
 [dev-packages]
 
