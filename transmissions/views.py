@@ -35,7 +35,7 @@ class TransmissionDetailView(DetailView):
 class TransmissionCreateView(LoginRequiredMixin, CreateView):
     model = Transmission
     template_name = 'transmission_new.html'
-    fields = ['title', 'author', 'body']
+    fields = ['title', 'body']
 
 class TransmissionUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Transmission
@@ -61,7 +61,7 @@ class TransmissionDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView
 class CommentCreateView(LoginRequiredMixin, CreateView):
     model = Comment
     template_name = 'comment_new.html'
-    fields = ('transmission', 'comment', 'author')
+    fields = ('transmission', 'comment')
 
 class CommentUpdateView(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
     model = Comment

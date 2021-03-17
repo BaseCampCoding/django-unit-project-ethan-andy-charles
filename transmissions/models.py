@@ -2,10 +2,15 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy
 from accounts.models import CustomUser
+from django_userforeignkey.models.fields import UserForeignKey
 
 class Transmission(models.Model):
     title = models.CharField(max_length=200, default=200,)
-    author = models.ForeignKey('accounts.CustomUser', on_delete=models.CASCADE, default="Joe")
+    author = UserForeignKey(
+        auto_user_add=True,
+        verbose_name="User is automatically assigned",
+        related_name="Tranmission.author+",
+    )
     body = models.TextField()
     likes = models.ManyToManyField(CustomUser, related_name='transmission_like')
 
@@ -26,9 +31,10 @@ class Comment(models.Model):
         related_name='comments',
         )
     comment = models.CharField(max_length=140)
-    author = models.ForeignKey(
-        get_user_model(),
-        on_delete=models.CASCADE,
+    author = UserForeignKey(
+        auto_user_add=True,
+        verbose_name="User is automatically assigned",
+        related_name="joe",
     )
 
     def __str__(self):
