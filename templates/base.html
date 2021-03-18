@@ -33,6 +33,8 @@
                                 {{ user.username }}
                             </a>
                             <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{% url 'user_profile' user.id %}">Profile Page</a>
+                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{% url 'index' %}">ChatRooms</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{% url 'password_change' %}">Change password</a>
