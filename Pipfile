@@ -15,6 +15,7 @@ django-userforeignkey = "*"
 environs = {extras = ["django"], version = "*"}
 psycopg2-binary = "*"
 gunicorn = "==19.9.0"
+daphne = "*"
 
 [dev-packages]
 

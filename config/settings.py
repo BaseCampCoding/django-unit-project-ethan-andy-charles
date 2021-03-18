@@ -96,9 +96,9 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG' : {
-            "hosts": [('redis-rigid-57947', 6379)],
-        },
-    },
+            "hosts": [env.str("REDIS_URL")],
+        }
+    }
 }
 
 # Database
