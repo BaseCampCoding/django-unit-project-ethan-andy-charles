@@ -7,11 +7,13 @@
 </head>
 {% block content %}
 <body>
-   <h2>Please enter the name of the chat room you would like to join or create!</h2><br>
-   <p>Our chat rooms do not save any information and are only open when one person has started one. As soon as everyone leaves a room it is gone and so are the messages. If you are trying to join your friends in a room you need to type in the name of the room exactly.
-       <br><small><i>- When creating a chat room do not use spaces in the name.</i></small>
-   </p>
-   Copy
+    <div class="card" style="background-color: #dad7c8;">
+        <h2>Please enter the name of the chat room you would like to join or create!</h2><br>
+        <p>Our chat rooms do not save any information and are only open when one person has started one. As soon as everyone leaves a room it is gone and so are the messages. If you are trying to join your friends in a room you need to type in the name of the room exactly.
+            <br><small><i>- When creating a chat room do not use spaces in the name.</i></small>
+        </p>
+        Copy
+   </div>
 <div class="list-group">
   <a href="{% url 'index' %}general" class="list-group-item list-group-item-action" aria-current="true">
     General
