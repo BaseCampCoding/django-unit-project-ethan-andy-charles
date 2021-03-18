@@ -2,8 +2,15 @@
 
 {% block content %}
 
-<h1>User Profile</h1>
-{{ page_user }}
-</br>
+<h1>{{ page_user }}</h1>
 {{ page_user.age }}
+</br>
+{{ page_user.bio }}
+</br>
+{% if user.is_authenticated %}
+    {% if user.id == object.id %}
+        <a href="{% url 'edit_profile' object.id %}">Edit Profile Page</a>
+    {% endif %}
+{% endif %}
+
 {% endblock content %}

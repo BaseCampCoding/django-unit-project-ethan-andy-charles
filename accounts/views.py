@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, DetailView
+from django.views.generic import CreateView, DetailView, UpdateView
 from .forms import CustomUserCreationForm
 from accounts.models import CustomUser
 
@@ -21,3 +21,8 @@ class ShowProfilePageView(DetailView):
         page_user = get_object_or_404(CustomUser, id=self.kwargs['pk'])
         context ['page_user'] = page_user 
         return context
+
+class EditProfilePageView(UpdateView):
+    model = CustomUser 
+    template_name = 'registration/edit_profile.html'
+    fields = ['username', 'bio']
